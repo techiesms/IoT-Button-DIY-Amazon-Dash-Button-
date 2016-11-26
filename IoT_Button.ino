@@ -25,6 +25,7 @@ void loop() {
    buttonState = digitalRead(button);
     if (buttonState == HIGH) {                     //button is pulled down to ground via 10k resistor
        if (value == 1){
+         WiFi.disconnect();
         Serial.println("Button Pressed");
        WiFi.begin(ssid, password); // connecting to wifi
        while (WiFi.status() != WL_CONNECTED) {
