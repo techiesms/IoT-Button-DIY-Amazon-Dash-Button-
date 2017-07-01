@@ -17,7 +17,7 @@ void setup() {
   pinMode(button, INPUT);
   pinMode(LED,OUTPUT);
   Serial.begin(115200);
-  digitalWrite(LED,HIGH); // By default Off state
+  digitalWrite(LED,LOW); // By default Off state
   }
 
 int value = 1;
@@ -32,7 +32,7 @@ void loop() {
         Serial.println("Conencting");
        delay(500);
        }
-       digitalWrite(LED,LOW);  // LED turns On
+       digitalWrite(LED,HIGH);  // LED turns On
        WiFiClient client;
        const int httpPort = 80;
        if (!client.connect(host, httpPort)) {
@@ -47,7 +47,7 @@ void loop() {
        
        value = 0;
        delay(5000);
-       digitalWrite(LED,HIGH);  // LED turns Off
+       digitalWrite(LED,LOW);  // LED turns Off
        }
     }
     else{
